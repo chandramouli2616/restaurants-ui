@@ -1,20 +1,23 @@
 <template>
   <header>
-    <h1>Restaurant Directory</h1>
+    <h1>Mouli Restaurant Directory</h1>
   </header>
 </template>
-
 <script>
 export default {
-  name: "AppHeader",  // Renamed from Header to AppHeader
+  name: "AppHeader", 
 };
 </script>
-
 <style scoped>
 header {
-  background-color: #3498db;
+  background-color: #003366;
   color: white;
-  padding: 10px;
+  padding: 12px;
   text-align: center;
 }
+header h1 {
+  color: white; 
+  margin: 0;
+}
+
 </style>

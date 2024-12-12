@@ -1,20 +1,19 @@
 <template>
+ <!-- it indicates html structure for footer -->
   <footer>
-    <p>&copy; 2024 Restaurant Directory</p>
+    <p>2024 Mouli Restaurant Directory</p>
   </footer>
 </template>
-
 <script>
 export default {
-  name: "AppFooter",  // Renamed from Footer to AppFooter
+  name: "AppFooter",  
 };
 </script>
-
 <style scoped>
 footer {
-  background-color: #2c3e50;
+  background-color:#003366;
   color: white;
-  padding: 10px;
+  padding: 12px;
   text-align: center;
 }
 </style>
