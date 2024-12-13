@@ -18,10 +18,14 @@
       <button @click="selectedRestaurant = null" class="back-button">Back</button>
       <div class="restaurant-details-view">
         <h2>{{ selectedRestaurant.name }}</h2>
+        <p>ID: {{ selectedRestaurant.id }}</p>
+
         <p>Rating: {{ selectedRestaurant.rating }}/5</p>
         <p>Location: {{ selectedRestaurant.location }}</p>
-        <p>Cuisine: {{ selectedRestaurant.cuisinetype }}</p>
+        <p>Cuisine: {{ selectedRestaurant.cuisinetype }} </p>
         <p>Opening Hours: {{ selectedRestaurant.openinghours }}</p>
+        <p>Is Active: {{ selectedRestaurant.isactive }} </p>
+
       </div>
     </div>
   </div>
@@ -38,14 +42,15 @@ export default {
   },
   async created() {
     try {
-      const { data } = await axios.get("https://resturants-backend-api.onrender.com/api/resturants/");
+      const { data } = await axios.get("https://resturants-backend-api.onrender.com/api");
       this.restaurants = data[0].restaurants.map((restaurant) => ({
         id: restaurant.id,
         name: restaurant.name,
-        location: restaurant.location,
-        rating: restaurant.rating,
-        cuisinetype: restaurant.cuisinetype,
-        openinghours: restaurant.openinghours,
+        location:restaurant.location,
+        rating:restaurant.rating,
+        cuisinetype:restaurant.cuisinetype,
+        openinghours:restaurant.openinghours,
+        isactive:restaurant.isactive,
       }));
     } catch (error) {
       console.error("Error fetching restaurant details:", error);
